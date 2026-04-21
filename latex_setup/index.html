@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Cài Đặt LaTeX Trên Windows</title>
+    <meta name="description" content="Hướng dẫn chi tiết cài đặt MiKTeX, thiết lập VS Code với LaTeX Workshop và biên dịch tài liệu LaTeX đầu tiên.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero-header">
+        <div class="container">
+            <h1 class="display-4">Cài Đặt LaTeX Trên Windows</h1>
+            <p>Trọn bộ công cụ: Strawberry Perl, MiKTeX, và VS Code (LaTeX Workshop)</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Bước 1 -->
+        <section class="glass-card" id="step1">
+            <h2><span class="step-number">1</span> Cài đặt Strawberry Perl (Bắt buộc)</h2>
+            <div class="highlight-box">
+                <strong>💡 Lý do:</strong> Perl là ngôn ngữ lập trình được sử dụng nhiều trong quá trình xử lý tài liệu của LaTeX (ví dụ như <code>latexmk</code> để biên dịch thông minh). Đây là yêu cầu bắt buộc cài đặt để MiKTeX hoạt động trơn tru.
+            </div>
+            <div class="text-center my-4">
+                <img src="asset/perl.png" alt="Cài đặt Strawberry Perl" class="img-fluid rounded shadow-sm" style="max-height: 400px; border: 1px solid var(--border);">
+            </div>
+            <p><strong>Các bước thực hiện:</strong></p>
+            <ul>
+                <li>Truy cập trang chủ của Strawberry Perl: <a href="https://strawberryperl.com/" target="_blank" rel="noopener">Strawberry Perl</a></li>
+                <li>Tải về phiên bản mới nhất dành cho Windows (thường là bản 64-bit).</li>
+                <li>Mở file <code>.msi</code> vừa tải và tiến hành cài đặt bằng cách nhấn <strong>Next</strong> cho đến khi hoàn thành (<strong>Finish</strong>).</li>
+            </ul>
+        </section>
+
+        <!-- Bước 2 -->
+        <section class="glass-card" id="step2">
+            <h2><span class="step-number">2</span> Cài đặt MiKTeX</h2>
+            <p>MiKTeX là trình quản lý và biên dịch LaTeX chính cho hệ điều hành Windows, giúp tự động cài đặt các thư viện (packages) bạn dùng mà chưa có sẵn trong máy tính.</p>
+            <div class="text-center my-4">
+                <img src="asset/miktex.png" alt="Cài đặt MiKTeX" class="img-fluid rounded shadow-sm" style="max-height: 400px; border: 1px solid var(--border);">
+            </div>
+            <p><strong>Các bước thực hiện:</strong></p>
+            <ol>
+                <li>Truy cập trang chủ MiKTeX: <a href="https://miktex.org/download" target="_blank" rel="noopener">Download MiKTeX</a>.</li>
+                <li>Nhấn nút <strong>Download</strong> để tải bản Installer về máy.</li>
+                <li>Mở file vừa tải lên, tiếp nhận các mục điều khoản và nhấn <strong>Next</strong>.</li>
+                <li>Ở mục <em>Install MiKTeX on this computer</em>, hãy chọn <strong>Install MiKTeX only for me</strong> (hoặc for anyone tùy theo quyền của bạn) &rarr; <strong>Next</strong>.</li>
+                <li>Ở màn hình <em>Settings</em>:
+                    <ul>
+                        <li><strong>Preferred paper:</strong> Chọn <code>A4</code>.</li>
+                        <li><strong>Install missing packages on-the-fly:</strong> Chuyển sang <strong>Yes</strong>. Việc chọn Yes giúp hệ thống tự động tải các gói thiếu về mà không hỏi thêm gây gián đoạn quá trình biên dịch.</li>
+                    </ul>
+                </li>
+                <li>Tiến tới <strong>Next</strong> và <strong>Start</strong> để phần mềm bắt đầu cài đặt.</li>
+            </ol>
+            <div class="alert alert-info mt-3" role="alert">
+                <strong>📝 Lưu ý quan trọng:</strong> Sau khi cài xong, bạn nên mở <strong>MiKTeX Console</strong> từ màn hình Start Menu, nhấn vào mục <strong>Updates</strong>, ấn <strong>Check for updates</strong> rồi chọn <strong>Update now</strong> để đảm bảo có bản cập nhật mới nhất.
+            </div>
+        </section>
+
+        <!-- Bước 3 -->
+        <section class="glass-card" id="step3">
+            <h2><span class="step-number">3</span> Cài Extension LaTeX Workshop (trên VS Code)</h2>
+            <p>Chúng ta sẽ bỏ qua bước cài đặt VS Code. Nếu đã cài sẵn VS Code, bạn hãy tận dụng nó làm trình hiển thị soạn thảo (editor) LaTeX vì nó vô cùng mạnh mẽ, dễ tùy biến.</p>
+            <div class="text-center my-4">
+                <img src="asset/latex_workshop.png" alt="Cài đặt Extension LaTeX Workshop" class="img-fluid rounded shadow-sm" style="max-height: 400px; border: 1px solid var(--border);">
+            </div>
+            <p><strong>Các bước thực hiện:</strong></p>
+            <ul>
+                <li>Mở phần mềm <strong>Visual Studio Code</strong>.</li>
+                <li>Chuyển sang khu vực quản lý Extensions bằng cách nhấn vào biểu tượng khối xếp hình ở cột bên trái (hoặc bấm <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>).</li>
+                <li>Nhập chữ <strong>LaTeX Workshop</strong> vào ô tìm kiếm.</li>
+                <li>Chọn tiện ích của tác giả <strong>James Yu</strong> (thường có hàng triệu lượt tải) và nhấn nút <strong>Install</strong>.</li>
+            </ul>
+            <p class="text-muted mt-3"><small>LaTeX Workshop có trình biên dịch nội bộ mạnh mẽ, nó sẽ tự động nhận diện <code>MiKTeX</code> và <code>latexmk</code> để build tài liệu của bạn một cách mượt mà nhất.</small></p>
+        </section>
+
+        <!-- Bước 4 -->
+        <section class="glass-card" id="step4">
+            <h2><span class="step-number">4</span> Biên dịch file LaTeX đầu tiên</h2>
+            <p>Hãy cùng tạo thử một file tài liệu hoàn chỉnh có hỗ trợ tiếng Việt!</p>
+            
+            <ol>
+                <li>Tạo một thư mục mới trên máy tính (ví dụ: <code>C:\MyFirstLaTeX</code>).</li>
+                <li>Kéo thả thư mục đó vào VS Code (hoặc vào <em>File &gt; Open Folder</em>).</li>
+                <li>Tạo một file mới với đuôi <strong>.tex</strong>, ví dụ đặt tên là <code>main.tex</code>.</li>
+                <li>Copy đoạn mã sau và dán vào file <code>main.tex</code>:</li>
+            </ol>
+
+<pre><code>\documentclass{article}
+
+% Khai báo các gói cơ bản hỗ trợ hiển thị Tiếng Việt
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+
+\title{Tài Liệu LaTeX Đầu Tiên}
+\author{Tên của bạn}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Lời nói đầu}
+Xin chào! Đây bài thực hành tạo tài liệu định dạng LaTeX đầu tiên được biên dịch trên máy cá nhân của tôi qua VS Code và MiKTeX. LaTeX mang lại khả năng trình bày văn bản cực kì chuyên nghiệp và nhất quán.
+
+\section{Công thức Toán học}
+Với LaTeX chúng ta có thể dễ dàng viết mọi công thức toán học, ví dụ như định lý Pytago:
+\[ a^2 + b^2 = c^2 \]
+hoặc tích phân đường cong dài:
+\[ \int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi} \]
+
+\end{document}</code></pre>
+
+            <h5 class="mt-4 mb-3">🛠 Cách Biên dịch (Build) và xem kết quả:</h5>
+            <div class="text-center my-4">
+                <img src="asset/build_tex.png" alt="Cách biên dịch file LaTeX trên VS Code" class="img-fluid rounded shadow-sm" style="max-height: 400px; border: 1px solid var(--border);">
+            </div>
+            <ul>
+                <li class="mb-2">Trong <strong>LaTeX Workshop</strong>, mỗi khi bạn <strong>lưu file (<kbd>Ctrl</kbd> + <kbd>S</kbd>)</strong> nó sẽ tự động build lại mọi thứ phía ngầm! Rất tiện lợi.</li>
+                <li class="mb-2"><strong>Chạy thủ công:</strong> Nhấn vào biểu tượng <strong>nút Play màu xanh lá</strong> ở góc trên bên phải thanh công cụ của VS Code (hiển thị khi đang mở file tex).</li>
+                <li class="mb-2"><strong>Xem file PDF:</strong> Nhấn vào biểu tượng <strong>View LaTeX PDF</strong> (hình tờ giấy nằm cạnh nút Play) ở góc phải, nên chọn <em>View in VSCode tab</em>. Khi chia đôi màn hình, một bên viết nội dung, một bên xem PDF sẽ tự động refresh.</li>
+            </ul>
+
+        </section>
+        
+        <div class="text-center mt-5 mb-5" style="animation: fadeInUp 0.8s ease-out 1s backwards;">
+            <h4 class="mb-4" style="font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700;">Chúc bạn thành công với thế giới LaTeX! 🎉</h4>
+            <a href="#" class="btn-custom" onclick="window.scrollTo(0,0); return false;">Quay lại đầu trang</a>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
